@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MapBuilder<K, V> {
-    private Map<K, V> map = new HashMap<>();
+    private Map<K, V> map = new HashMap<K, V>();
 
     public static <K, V> MapBuilder<K, V> mapBuilder() {
-        return new MapBuilder<>();
+        return new MapBuilder<K, V>();
     }
 
     public MapBuilder<K, V> put(K key, V value) {
