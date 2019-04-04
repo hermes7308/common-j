@@ -7,19 +7,19 @@ public enum ResponseStatus {
     FAIL,
     ERROR;
 
-    public boolean isSuccess(String success) {
-        return SUCCESS.equals(success);
+    public boolean isSuccess() {
+        return this == SUCCESS;
     }
 
-    public boolean isFail(String fail) {
-        return FAIL.equals(fail);
+    public boolean isFail() {
+        return this == FAIL;
     }
 
-    public boolean isError(String error) {
-        return ERROR.equals(error);
+    public boolean isError() {
+        return this == ERROR;
     }
 
-    private boolean equals(String name) {
+    public boolean equals(String name) {
         return StringUtils.equalsIgnoreCase(this.name(), name);
     }
 }
