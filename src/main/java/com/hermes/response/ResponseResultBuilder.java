@@ -4,8 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ResponseResultBuilder {
+
     public static final String STATUS = "status";
     public static final String MESSAGE = "message";
+    public static final String EXCEPTION = "exception";
+    public static final String RESULT = "result";
     private Map<String, Object> apiResult;
 
     private ResponseResultBuilder(String key, ResponseStatus status) {
@@ -27,6 +30,16 @@ public class ResponseResultBuilder {
 
     public ResponseResultBuilder message(String message) {
         apiResult.put(MESSAGE, message);
+        return this;
+    }
+
+    public ResponseResultBuilder exception(Exception exception) {
+        apiResult.put(EXCEPTION, exception);
+        return this;
+    }
+
+    public ResponseResultBuilder result(Map<String, Object> result) {
+        apiResult.put(RESULT, result);
         return this;
     }
 
